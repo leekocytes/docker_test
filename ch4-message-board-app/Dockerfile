@@ -15,3 +15,6 @@ RUN pipenv install --system --skip-lock
 
 # Copy project
 COPY . /ch4-message-board-app/
+
+#CMD required by heroku
+CMD gunicorn --bind 0.0.0.0:$PORT mb_project.wsgi
