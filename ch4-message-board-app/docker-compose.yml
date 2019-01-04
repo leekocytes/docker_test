@@ -8,3 +8,4 @@ services:
       - .:/ch4-message-board-app
     ports:
       - 8000:8000
+    env_file: .env
