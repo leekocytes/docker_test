@@ -16,5 +16,9 @@ RUN pipenv install --system --skip-lock
 # Copy project
 COPY . /ch4-message-board-app/
 
+# Run the image as a non-root user
+RUN adduser --disabled-login myuser
+USER myuser
+
 #CMD required by heroku
 CMD gunicorn --bind 0.0.0.0:$PORT mb_project.wsgi
